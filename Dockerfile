@@ -1,10 +1,12 @@
 # Base Python image
-FROM python:3.10-slim
+FROM python:3.10-slim-bookworm
+
 
 # Install system dependencies for C++, Java, etc.
 RUN apt-get update && \
     apt-get install -y g++ openjdk-17-jdk-headless && \
     rm -rf /var/lib/apt/lists/*
+
 
 # Set environment variables
 ENV PYTHONUNBUFFERED 1
